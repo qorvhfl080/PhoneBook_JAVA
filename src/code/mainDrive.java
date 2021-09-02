@@ -24,11 +24,37 @@ public class mainDrive {
 			
 			menu = sc.nextInt();
 			
+			if (menu == 1) {
+
+				addPhoneNum();
+				
+			} else if (menu == 2) {
+				
+				showAllPhoneNum();
+				
+			} else {
+				System.out.println("잘못된 입력입니다.");
+				
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					System.out.println(e.getMessage());
+					e.printStackTrace();
+				}
+			}
 			
 		}
 		
 		sc.close();
 		System.out.println("프로그램 종료...");
+		
+	}
+	
+	static void addPhoneNum() {
+		
+	}
+	
+	static void showAllPhoneNum() {
 		
 	}
 
