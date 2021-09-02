@@ -1,7 +1,10 @@
 package code;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -112,6 +115,31 @@ public class mainDrive {
 	}
 	
 	static void addUsersByFile(List<UserData> list) {
+		
+		File myFile = new File("phoneBook.csv");
+		
+		try {
+			FileReader fr = new FileReader(myFile);
+			
+			BufferedReader br = new BufferedReader(fr);
+			
+			while (true) {
+				
+				String line = br.readLine();
+				
+				if (line == null)
+					break;
+				
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("아직 저장된 번호가 하나도 없습니다.");
+			System.out.println("전화번호부 파일이 만들어지지 않았습니다.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("손상된 내용이 있습니다.");
+			e.printStackTrace();
+		}
 		
 		
 		
