@@ -4,7 +4,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import code.data.UserData;
 
 public class mainDrive {
 
@@ -96,6 +100,20 @@ public class mainDrive {
 	}
 	
 	static void showAllPhoneNum() {
+		
+		List<UserData> userList = new ArrayList<UserData>();
+		
+		addUsersByFile(userList);
+		
+		for (UserData user : userList) {
+			System.out.println(user);
+		}
+		
+	}
+	
+	static void addUsersByFile(List<UserData> list) {
+		
+		
 		
 	}
 
