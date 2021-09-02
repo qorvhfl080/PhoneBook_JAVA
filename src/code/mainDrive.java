@@ -1,5 +1,9 @@
 package code;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class mainDrive {
@@ -62,6 +66,32 @@ public class mainDrive {
 		
 		System.out.print("출생년도 입력 : ");
 		int birthYear = sc.nextInt();
+		
+		String content = String.format("$s,%s,%d", name, phoneNum, birthYear);
+		
+		savePhoneNumToFile(content);
+		
+	}
+	
+	static void savePhoneNumToFile(String content) {
+		
+		File myFile = new File("myPhoneBoox.txt");
+		
+		try {
+			FileWriter fw = new FileWriter(myFile, true);
+			
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			bw.append("이재환, 010-1234-5678, 1997");
+			bw.newLine();
+			
+			bw.close();
+			fw.close();
+			
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 		
 	}
 	
