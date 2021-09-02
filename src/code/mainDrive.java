@@ -67,7 +67,7 @@ public class mainDrive {
 		System.out.print("출생년도 입력 : ");
 		int birthYear = sc.nextInt();
 		
-		String content = String.format("$s,%s,%d", name, phoneNum, birthYear);
+		String content = String.format("%s,%s,%d", name, phoneNum, birthYear);
 		
 		savePhoneNumToFile(content);
 		
@@ -75,14 +75,14 @@ public class mainDrive {
 	
 	static void savePhoneNumToFile(String content) {
 		
-		File myFile = new File("myPhoneBoox.txt");
+		File myFile = new File("phoneBook.csv");
 		
 		try {
 			FileWriter fw = new FileWriter(myFile, true);
 			
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			bw.append("이재환, 010-1234-5678, 1997");
+			bw.append(content);
 			bw.newLine();
 			
 			bw.close();
