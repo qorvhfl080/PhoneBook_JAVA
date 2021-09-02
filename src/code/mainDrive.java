@@ -52,6 +52,17 @@ public class mainDrive {
 	
 	static void addPhoneNum() {
 		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름 입력 : ");
+		String name = sc.next();
+		
+		System.out.print("폰번 입력 : ");
+		String phoneNum = sc.next();
+		
+		System.out.print("출생년도 입력 : ");
+		int birthYear = sc.nextInt();
+		
 	}
 	
 	static void showAllPhoneNum() {
